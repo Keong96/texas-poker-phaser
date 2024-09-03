@@ -72,31 +72,31 @@ export default class HomeScene extends Phaser.Scene {
 
     connectWalletContainer.add(metamaskLogo);
 
-    if(window.tronWeb)
-    {
-      if (window.tronWeb.ready)
-      {
-        tronlinkText.setText(window.tronWeb.defaultAddress.base58);
-        tronlinkText.setInteractive(false);
-      }
-    }
-    else
-    {
-      if (this.sys.game.device.os.android || this.sys.game.device.os.iOS)
-      {
-      let platform = this.sys.game.device.os.android ? 'Android' : 'iOS';
-      let storeLink = platform === 'Android' ? 
-        'https://play.google.com/store/apps/details?id=com.tronlinkpro.wallet' : 
-        'https://apps.apple.com/us/app/tronlink-tron-wallet/id1457849319';
+    // if(window.tronWeb)
+    // {
+    //   if (window.tronWeb.ready)
+    //   {
+    //     tronlinkText.setText(window.tronWeb.defaultAddress.base58);
+    //     tronlinkText.setInteractive(false);
+    //   }
+    // }
+    // else
+    // {
+    //   if (this.sys.game.device.os.android || this.sys.game.device.os.iOS)
+    //   {
+    //   let platform = this.sys.game.device.os.android ? 'Android' : 'iOS';
+    //   let storeLink = platform === 'Android' ? 
+    //     'https://play.google.com/store/apps/details?id=com.tronlinkpro.wallet' : 
+    //     'https://apps.apple.com/us/app/tronlink-tron-wallet/id1457849319';
 
-      window.location.href = storeLink;
-      }
-      else
-      {
-        var tronlinkURL = "https://chrome.google.com/webstore/detail/tronlink/ibnejdfjmmkpcnlpebklmnkoeoihofec";
-        window.location.href = tronlinkURL;
-      }
-    }
+    //   window.location.href = storeLink;
+    //   }
+    //   else
+    //   {
+    //     var tronlinkURL = "https://chrome.google.com/webstore/detail/tronlink/ibnejdfjmmkpcnlpebklmnkoeoihofec";
+    //     window.location.href = tronlinkURL;
+    //   }
+    // }
     
     tronlinkText.on('pointerdown', async() => {
       await this.connectTronLink(tronlinkText, loading)
@@ -104,14 +104,14 @@ export default class HomeScene extends Phaser.Scene {
   }
 
   async connectTronLink(tronlinkText, loading) {
-    var address = "";
+    // var address = "";
 
-    if (window.tronWeb && window.tronWeb.ready) {
-      address = window.tronWeb.defaultAddress.base58;
-    } else {
-      await tron.request({method: 'eth_requestAccounts'});
-      address = window.tronWeb.defaultAddress.base58;
-    }
+    // if (window.tronWeb && window.tronWeb.ready) {
+    //   address = window.tronWeb.defaultAddress.base58;
+    // } else {
+    //   await tron.request({method: 'eth_requestAccounts'});
+    //   address = window.tronWeb.defaultAddress.base58;
+    // }
 
     loading.alpha = 1.0;
 
