@@ -124,7 +124,7 @@ export default class HomeScene extends Phaser.Scene {
       repeat: -1
     });
 
-    tronlinkText.setText(address);
+    //tronlinkText.setText(address);
     tronlinkText.setInteractive(false);
 
     setTimeout(() => {
