@@ -12,8 +12,8 @@ const config = {
     width: 900,
     height: 1600
   },
-  //scene: [HomeScene, LobbyScene, CreateRoomScene, JoinRoomScene, GameScene],
-  scene: [LobbyScene, CreateRoomScene, JoinRoomScene, GameScene],
+  scene: [HomeScene, LobbyScene, CreateRoomScene, JoinRoomScene, GameScene],
+  //scene: [LobbyScene, CreateRoomScene, JoinRoomScene, GameScene],
   dom: {
     createContainer: true
   },
